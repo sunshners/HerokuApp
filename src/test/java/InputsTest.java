@@ -36,28 +36,28 @@ public class InputsTest {
         inputField.clear();
         inputField.sendKeys("10");
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(inputField.getAttribute("value"), "10", "Поле должно" +
+        softAssert.assertEquals(inputField.getAttribute("value"), "10", "Поле должно " +
                 "содержать '10'");
 
         inputField.sendKeys(Keys.ARROW_UP);
-        softAssert.assertEquals(inputField.getAttribute("value"), "11", "После нажатия" +
+        softAssert.assertEquals(inputField.getAttribute("value"), "11", "После нажатия " +
                 "стрелки вверх значение должно быть '11'");
 
         inputField.sendKeys(Keys.ARROW_DOWN); // Уменьшение значения
-        softAssert.assertEquals(inputField.getAttribute("value"), "10", "После нажатия" +
+        softAssert.assertEquals(inputField.getAttribute("value"), "10", "После нажатия " +
                 "стрелки вниз значение должно быть '10'");
 
         inputField.clear();
         inputField.sendKeys("abc");
-        softAssert.assertEquals(inputField.getAttribute("value"), "abc", "Поле должно" +
+        softAssert.assertEquals(inputField.getAttribute("value"), "abc", "Поле должно " +
                 "содержать 'abc'");
 
         inputField.sendKeys(Keys.ARROW_UP);
-        softAssert.assertEquals(inputField.getAttribute("value"), "abc", "Значение не должно" +
+        softAssert.assertEquals(inputField.getAttribute("value"), "abc", "Значение не должно " +
                 "измениться при нажатии стрелки вверх на текстовом вводе");
 
         inputField.sendKeys(Keys.ARROW_DOWN);
-        softAssert.assertEquals(inputField.getAttribute("value"), "abc", "Значение не должно" +
+        softAssert.assertEquals(inputField.getAttribute("value"), "abc", "Значение не должно " +
                 "измениться при нажатии стрелки вниз на текстовом вводе");
         softAssert.assertAll();
     }
